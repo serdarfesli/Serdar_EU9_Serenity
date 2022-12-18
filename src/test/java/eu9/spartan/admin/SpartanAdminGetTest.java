@@ -31,5 +31,13 @@ public class SpartanAdminGetTest {
         System.out.println(lastResponse().statusCode());
         System.out.println(lastResponse().jsonPath().getString("name"));
     }
+    @Test
+    public void getAllSpartanAssertion(){
 
+        given()
+                .accept(ContentType.JSON)
+                .and()
+                .auth().basic("admin","admin")
+                .when()
+                .get("/api/spartans");
 }
