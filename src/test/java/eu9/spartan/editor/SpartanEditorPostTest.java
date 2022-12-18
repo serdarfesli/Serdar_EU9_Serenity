@@ -1,6 +1,8 @@
 package eu9.spartan.editor;
 
-public class SpartanEditorPostTest {
+import utilities.SpartanNewBase;
+
+public class SpartanEditorPostTest extends SpartanNewBase {
 
 
 }
