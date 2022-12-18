@@ -7,6 +7,7 @@ import org.junit.jupiter.api.Test;
 
 import static io.restassured.RestAssured.baseURI;
 import static net.serenitybdd.rest.SerenityRest.given;
+import static net.serenitybdd.rest.SerenityRest.lastResponse;
 
 @SerenityTest
 public class SpartanAdminGetTest {
@@ -25,11 +26,10 @@ public class SpartanAdminGetTest {
                 .and()
                 .auth().basic("admin","admin")
                 .when()
-                .get("/api/spartans")
-                .then()
-                .statusCode(200)
-                .and()
-                .contentType(ContentType.JSON);
+                .get("/api/spartans");
+
+        System.out.println(lastResponse().statusCode());
+        System.out.println(lastResponse().jsonPath().getString("name"));
     }
 
 }
